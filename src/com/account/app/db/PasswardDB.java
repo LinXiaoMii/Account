@@ -44,7 +44,7 @@ public class PasswardDB {
 			String passward = cursor.getString(cursor.getColumnIndex("passward"));
 			return new Passward(passward) ;
 		}
-		return null ;
+		return new Passward() ;
 	}
 	
 	public long getCount(){

@@ -8,7 +8,7 @@
     android:horizontalSpacing="10dp"
     android:stretchMode="spacingWidthUniform"
     android:gravity="center"
-    android:verticalSpacing="10dp">
+    android:verticalSpacing="20dp">
     
 
 </GridView>

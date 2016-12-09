@@ -7,6 +7,7 @@ public class Passward {
 	//定义构造函数
 	public Passward() {
 		// TODO Auto-generated constructor stub
+		super();
 	}
 	public Passward(String passward){
 		this.passward = passward ;

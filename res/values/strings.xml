@@ -2,4 +2,10 @@
 
     <string name="app_name">Account</string>
 
+     <string-array name="intype" >
+        <item >工资</item>
+        <item >奖金</item>
+        <item >红包</item>
+        <item >投资</item>
+</string-array>   
 </resources>

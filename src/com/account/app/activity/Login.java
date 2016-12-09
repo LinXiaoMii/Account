@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -50,8 +51,9 @@ public class Login extends Activity{
 				// TODO Auto-generated method stub
 				Intent intent = new Intent(Login.this,MainActivity.class);
 				PasswardDB passwardDB = new PasswardDB(Login.this);
+				//String s = passwardDB.findPassward().getPassward() ;
 				//判断是否有密码/是否输入了密码
-				if(passwardDB.getCount() == 0 |passwardDB.findPassward().getPassward().isEmpty() && passwardEdit.getText().toString().isEmpty()){
+				if((passwardDB.getCount() == 0 |passwardDB.findPassward().getPassward() == null) && passwardEdit.getText().toString().isEmpty()){
 					startActivity(intent);//首次登陆
 				}else{
 					if(passwardDB.findPassward().getPassward().equals(passwardEdit.getText().toString())){

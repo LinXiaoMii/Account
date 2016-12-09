@@ -15,19 +15,19 @@ public class AccountOpenHelper extends SQLiteOpenHelper{
 	
 	
 	//创建便签信息表
-	public String CREATE_FLAG = "create table FLAG(" + " id interger primary key autoincrement,"
+	public String CREATE_FLAG = "create table FLAG(" + " id integer primary key autoincrement,"
 			                                         + " flag varchar(200) )";
 	//创建密码信息表
 	public String CREATE_PWD = "create table PASSWARD(" + " passward varchar(20) )";
 	//创建支出信息表
-	public String CREATE_OUTACCOUNT = "create table OUTACCOUNT(" + " id interger primary key autoincrement,"
+	public String CREATE_OUTACCOUNT = "create table OUTACCOUNT(" + " id integer primary key autoincrement,"
 	                                                             + " money decimal,"
 			                                                     + " time varchar(10),"
 	                                                             + " type varchar(10),"
 			                                                     + " address varchar(100),"
 	                                                             + " mark varchar(200) )";
 	//创建收入信息表
-	public String CREATE_INACCOUNT = "create table INACCOUNT(" + " id interger primary key autoincrement,"
+	public String CREATE_INACCOUNT = "create table INACCOUNT(" + " id integer primary key autoincrement,"
 															   + " money deciaml,"
 															   + " time varchar(10),"
 															   + " type varchar(10),"
