@@ -65,12 +65,12 @@ public class InAccoutDB {
 	//浏览收入信息
 	public List<InAccount> loadInAccount(int start,int count){
 		Cursor cursor = db.rawQuery("select * from INACCOUNT limit ?,?",new String[]{String.valueOf(start),String.valueOf(count)});
-		List inAccounts = new ArrayList<InAccount>();
+		List<InAccount> inAccounts = new ArrayList<InAccount>();
 		while(cursor.moveToNext()){
 			InAccount inAccount = new InAccount();
 			inAccount.setId(cursor.getInt(cursor.getColumnIndex("id")));
 			inAccount.setTime(cursor.getString(cursor.getColumnIndex("time")));
-			inAccount.setType(cursor.getString(cursor.getColumnIndex("typr")));
+			inAccount.setType(cursor.getString(cursor.getColumnIndex("type")));
 			inAccount.setMark(cursor.getString(cursor.getColumnIndex("mark")));
 			inAccount.setHandler(cursor.getString(cursor.getColumnIndex("handler")));
 			inAccount.setMoney(cursor.getDouble(cursor.getColumnIndex("money")));

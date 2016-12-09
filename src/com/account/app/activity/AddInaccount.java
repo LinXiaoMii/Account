@@ -68,12 +68,19 @@ public class AddInaccount extends Activity{
 					InAccount inAccount = new InAccount(inAccountDB.getMax()+1,Double.parseDouble(inMoney),editInTime.getText().toString(),spinInType.getSelectedItem().toString(),editInHnadler.getText().toString(),editInMark.getText().toString());
 					inAccountDB.addInAccount(inAccount);  //添加收入信息
 					Toast.makeText(AddInaccount.this, "[新增收入]数据添加成功", Toast.LENGTH_SHORT).show();
+					
+					editInMoney.setText("");
+					final Calendar c = Calendar.getInstance() ;  //获取当前系统日期
+					inYear = c.get(Calendar.YEAR);  //获取年份
+					inMonth = c.get(Calendar.MONTH); //获取月份
+					inDay = c.get(Calendar.DAY_OF_MONTH); //获取天数
+					updateDisplay();  //显示当前系统日期
 				}else{
 					Toast.makeText(AddInaccount.this, "请输入收入金额", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
-		inSaveButton.setOnClickListener(new OnClickListener() {
+		inCancelButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -84,7 +91,12 @@ public class AddInaccount extends Activity{
 				editInMark.setText("");
 				editInTime.setText("");
 				spinInType.setSelection(0);//设置类别下拉列表默认选择第一项
-				updateDisplay();
+				
+				final Calendar c = Calendar.getInstance() ;  //获取当前系统日期
+				inYear = c.get(Calendar.YEAR);  //获取年份
+				inMonth = c.get(Calendar.MONTH); //获取月份
+				inDay = c.get(Calendar.DAY_OF_MONTH); //获取天数
+				updateDisplay();  //显示当前系统日期
 			}
 		});
 		}

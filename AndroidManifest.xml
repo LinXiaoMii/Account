@@ -21,9 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.account.app.activity.MainActivity">
-        </activity>
+        <activity android:name="com.account.app.activity.MainActivity"/>
         <activity android:name="com.account.app.activity.AddInaccount"/>
+        <activity android:name="com.account.app.activity.InAccountInfo"/>
+        <activity android:name="com.account.app.activity.InfoManag"/> 
     </application>
 
 </manifest>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:layout_marginTop="5dp"
+    android:weightSum="1"> <!--定义weight总合的最大值-->
+    <LinearLayout 
+        android:id="@+id/linearlayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout 
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+             <TextView android:text="我的收入"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textColor="#8c6931"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:id="@+id/linearlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.94">
+        <ListView 
+            android:id="@+id/listInaccountInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+        </ListView>
+    </LinearLayout>
+
+</LinearLayout>
