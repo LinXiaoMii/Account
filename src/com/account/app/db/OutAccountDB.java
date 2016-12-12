@@ -62,8 +62,10 @@ public class OutAccountDB {
 		if(ids.length>0){
 			StringBuffer sb = new StringBuffer();
 			for(int i =0;i<ids.length;i++){
-				sb.append('?').append('?');
+				sb.append('?').append(',');
 			}
+			sb.deleteCharAt(sb.length()-1);
+			db = helper.getWritableDatabase() ;
 			db.execSQL("delete from OUTACCOUNT where id in("+ sb +")",(Object[])ids);
 		}
 	}
@@ -71,12 +73,12 @@ public class OutAccountDB {
 	//浏览收入信息
 	public List<OutAccount> loadOutAccount(int start,int count){
 		Cursor cursor = db.rawQuery("select * from OUTACCOUNT limit ?,?",new String[]{String.valueOf(start),String.valueOf(count)});
-		List OutAccounts = new ArrayList<OutAccount>();
+		List<OutAccount> OutAccounts = new ArrayList<OutAccount>();
 		while(cursor.moveToNext()){
 			OutAccount OutAccount = new OutAccount();
 			OutAccount.setId(cursor.getInt(cursor.getColumnIndex("id")));
 			OutAccount.setTime(cursor.getString(cursor.getColumnIndex("time")));
-			OutAccount.setType(cursor.getString(cursor.getColumnIndex("typr")));
+			OutAccount.setType(cursor.getString(cursor.getColumnIndex("type")));
 			OutAccount.setMark(cursor.getString(cursor.getColumnIndex("mark")));
 			OutAccount.setMoney(cursor.getDouble(cursor.getColumnIndex("money")));
 			OutAccount.setAddress(cursor.getString(cursor.getColumnIndex("address")));

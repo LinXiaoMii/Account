@@ -24,7 +24,9 @@
         <activity android:name="com.account.app.activity.MainActivity"/>
         <activity android:name="com.account.app.activity.AddInaccount"/>
         <activity android:name="com.account.app.activity.InAccountInfo"/>
-        <activity android:name="com.account.app.activity.InfoManag"/> 
+        <activity android:name="com.account.app.activity.InfoManage"/> 
+        <activity android:name="com.account.app.activity.OutAccountInfo"/>
+         <activity android:name="com.account.app.activity.AddOutaccount"/>
     </application>
 
 </manifest>

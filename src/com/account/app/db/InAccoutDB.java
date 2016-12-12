@@ -30,7 +30,7 @@ public class InAccoutDB {
 	//更新收入信息
 	public void updateInAccount(InAccount inAccount){
 		db = helper.getWritableDatabase() ;
-		db.execSQL("update INACCOUNT set money = ?,time = ?,type = ?,hanlder = ?,mark = ? where id =?",new Object[]{inAccount.getMoney(),inAccount.getTime(),
+		db.execSQL("update INACCOUNT set money = ?,time = ?,type = ?,handler = ?,mark = ? where id =?",new Object[]{inAccount.getMoney(),inAccount.getTime(),
 				inAccount.getType(),inAccount.getHandler(),inAccount.getMark(),inAccount.getId()});
 	}
 	
@@ -56,8 +56,10 @@ public class InAccoutDB {
 		if(ids.length>0){
 			StringBuffer sb = new StringBuffer();
 			for(int i =0;i<ids.length;i++){
-				sb.append('?').append('?');
+				sb.append('?').append(',');
 			}
+			sb.deleteCharAt(sb.length()-1);
+			db = helper.getWritableDatabase() ;
 			db.execSQL("delete from INACCOUNT where id in("+ sb +")",(Object[])ids);
 		}
 	}

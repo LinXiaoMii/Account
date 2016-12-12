@@ -1,25 +1,23 @@
 package com.account.app.activity;
 
-import java.util.List;
-
-import com.account.app.db.InAccoutDB;
-import com.account.app.model.InAccount;
 import com.example.account.R;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class InAccountInfo extends Activity{
 	public static final String FLAG = "id" ; //定义一个常量来作为请求码
 	ListView listInaccountInfo ;
-	String strInType = "" ; //记录管理类型
+	String strInType = "ininfo" ; //记录管理类型
+	ArrayAdapter<String>arrayAdapter = null ;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +25,29 @@ public class InAccountInfo extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.inaccountinfo);
 		listInaccountInfo = (ListView)findViewById(R.id.listInaccountInfo);
-		showInfo();
+		ShowInfo show = ShowInfo.newInstance() ;
+		show.showInfo(strInType,InAccountInfo.this) ;
+		
+		arrayAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,show.strInfo);//simple_list_item_1 中有一个TextView
+		listInaccountInfo.setAdapter(arrayAdapter);
+		listInaccountInfo.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+				// TODO Auto-generated method stub
+				Log.d("YINQI", "ok") ;
+				String strInfo = String.valueOf(((TextView)view).getText()); //记录收入信息
+				String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从收入信息中截取收入编号
+				Intent intent = new Intent(InAccountInfo.this,InfoManage.class);
+				intent.putExtra(FLAG, new String[]{strid,strInType}); //设置传递数据
+				startActivity(intent);
+				arrayAdapter.notifyDataSetChanged();
+			}
+		});
 	}
+}
 	
-	private void showInfo(){  //根据管理类型显示相应信息
+	/*private void showInfo(){  //根据管理类型显示相应信息
 		String strInfo[] = null ; //定义字符串存储数组
 		ArrayAdapter<String>arrayAdapter = null ;
 		strInType = "btninifo" ;
@@ -57,6 +74,4 @@ public class InAccountInfo extends Activity{
 				startActivity(intent);
 			}
 		});
-	}
-
-}
+	}*/

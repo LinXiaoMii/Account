@@ -3,9 +3,23 @@
     <string name="app_name">Account</string>
 
      <string-array name="intype" >
-        <item >工资</item>
-        <item >奖金</item>
-        <item >红包</item>
-        <item >投资</item>
+        <item >工资收入</item>
+        <item >奖金收入</item>
+        <item >礼金收入</item>
+        <item >投资收入</item>
+        </string-array>
+        
+        <string-array name="outtype" >
+        <item >衣服饰品</item>
+        <item >食品酒水</item>
+        <item >居家物业</item>
+        <item >行车交通</item>
+        <item >休闲娱乐</item>
+        <item >学习进修</item>
+        <item >人情往来</item>
+        <item >医疗保健</item>
+        <item >金融保险</item>
+        <item >交流通讯</item>
+        <item >其他杂项</item>
 </string-array>   
 </resources>
