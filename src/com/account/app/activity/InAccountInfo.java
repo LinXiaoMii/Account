@@ -41,9 +41,16 @@ public class InAccountInfo extends Activity{
 				Intent intent = new Intent(InAccountInfo.this,InfoManage.class);
 				intent.putExtra(FLAG, new String[]{strid,strInType}); //设置传递数据
 				startActivity(intent);
-				arrayAdapter.notifyDataSetChanged();
 			}
 		});
+	}
+	
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		
+		Intent intent = new Intent(this,MainActivity.class);
+		startActivity(intent);
 	}
 }
 	

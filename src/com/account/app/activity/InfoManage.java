@@ -125,7 +125,8 @@ public class InfoManage extends Activity{
 					outAccountDB.updateOutAccount(outAccount);
 				}
 				Toast.makeText(InfoManage.this, "数据修改成功", Toast.LENGTH_SHORT).show() ;
-				
+				Intent intent = new Intent(InfoManage.this,InAccountInfo.class);
+				startActivity(intent);
 			}
 		});
 		
@@ -140,6 +141,8 @@ public class InfoManage extends Activity{
 					outAccountDB.deleteOutAccoutDB(Integer.parseInt(strId));
 				}
 				Toast.makeText(InfoManage.this, "数据删除成功", Toast.LENGTH_SHORT).show() ;
+				Intent intent = new Intent(InfoManage.this,InAccountInfo.class);
+				startActivity(intent);
 			}
 		});
 		
