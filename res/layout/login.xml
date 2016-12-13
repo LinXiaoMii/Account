@@ -30,12 +30,17 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00AAAA"
+            android:layout_marginLeft="15dp"
             android:text="登陆" />
         <Button 
             android:id="@+id/cancel_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#00AAAA"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:text="取消" />"
     </TableRow>
     
