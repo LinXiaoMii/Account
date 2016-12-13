@@ -35,7 +35,6 @@ public class OutAccountInfo extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				// TODO Auto-generated method stub
-				Log.d("YINQI", "ok") ;
 				String strInfo = String.valueOf(((TextView)view).getText()); //记录支出信息
 				String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从支出信息中截取支出编号
 				Intent intent = new Intent(OutAccountInfo.this,InfoManage.class);
@@ -44,6 +43,15 @@ public class OutAccountInfo extends Activity{
 			}
 		});
 	}
+	
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		
+		Intent intent = new Intent(this,MainActivity.class);
+		startActivity(intent);
+	}
+
 }
 	
 	

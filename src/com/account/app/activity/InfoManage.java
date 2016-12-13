@@ -141,6 +141,8 @@ public class InfoManage extends Activity{
 					outAccountDB.deleteOutAccoutDB(Integer.parseInt(strId));
 				}
 				Toast.makeText(InfoManage.this, "数据删除成功", Toast.LENGTH_SHORT).show() ;
+				
+				//返回上一级菜单，达到刷新数据的效果（否则停在该界面，利用返回键返回ListView时，数据并没有刷新）
 				Intent intent = new Intent(InfoManage.this,InAccountInfo.class);
 				startActivity(intent);
 			}

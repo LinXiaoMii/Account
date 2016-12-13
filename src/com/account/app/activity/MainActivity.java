@@ -2,7 +2,6 @@ package com.account.app.activity;
 
 
 
-import com.account.app.model.InAccount;
 import com.example.account.R;
 
 import android.app.Activity;
@@ -52,15 +51,15 @@ public class MainActivity extends Activity{
 					startActivity(intent);
 					break; 
 				case 4:
-					intent = new Intent(MainActivity.this,Manage.class);
+					intent = new Intent(MainActivity.this,DataManage.class);
 					startActivity(intent);
 					break; 
 				case 5:
-					intent = new Intent(MainActivity.this,AccountFlag.class);
+					intent = new Intent(MainActivity.this,Setting.class);
 					startActivity(intent);
 					break; 
 				case 6:
-					intent = new Intent(MainActivity.this,Setting.class);
+					intent = new Intent(MainActivity.this,AccountFlag.class);
 					startActivity(intent);
 					break; 
 				case 7:
@@ -69,6 +68,14 @@ public class MainActivity extends Activity{
 			}
 			
 		});
+	}
+
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		super.onBackPressed();
+		
+		Intent intent = new Intent(this,Login.class);
+		startActivity(intent);
 	}
 
 }

@@ -77,6 +77,7 @@ public class FlagDB {
 	//浏览便签
 	public List<Flag> loadFlag(){
 		List<Flag> flags = new ArrayList<Flag>();
+		db = helper.getWritableDatabase() ;
 		Cursor cursor = db.query("FLAG", null, null, null, null, null, null) ;
 		if(cursor.moveToFirst()){
 			do{
@@ -96,6 +97,15 @@ public class FlagDB {
 		Cursor cursor = db.rawQuery("select count(id) from FLAG", null) ; //获取收入信息的记录数
 		if(cursor.moveToNext()){  //判断 cursor中是否有数据
 			return cursor.getLong(0); //返回总记录数
+		}
+		return 0 ;
+	}
+	
+	public int getMax(){
+		db = helper.getWritableDatabase() ;
+		Cursor cursor = db.rawQuery("select max(id) from FLAG", null);
+		while(cursor.moveToNext()){
+			return cursor.getInt(0);
 		}
 		return 0 ;
 	}

@@ -35,7 +35,6 @@ public class InAccountInfo extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 				// TODO Auto-generated method stub
-				Log.d("YINQI", "ok") ;
 				String strInfo = String.valueOf(((TextView)view).getText()); //记录收入信息
 				String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从收入信息中截取收入编号
 				Intent intent = new Intent(InAccountInfo.this,InfoManage.class);

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:layout_marginTop="8dp"
+    android:weightSum="1"
+    android:id="@+id/itemInfo">
+    <LinearLayout 
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.06">
+        <TableLayout 
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableRow >
+                <Button 
+                    android:id="@+id/buttonInInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:layout_weight="1"
+                    android:background="#00AAAA"
+                    android:textColor="#FFFFFF"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:text="收入信息"
+                    />
+                 <Button 
+                    android:id="@+id/buttonOutInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:background="#00AAAA"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    android:layout_toRightOf="@id/buttonInInfo"
+                    android:layout_marginRight="5dp"
+                    android:text="支出信息"
+                    />
+                  <Button 
+                    android:id="@+id/buttonFlagInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:background="#00AAAA"
+                    android:textColor="#FFFFFF"
+                    android:layout_weight="1"
+                    android:layout_marginRight="5dp"
+                    android:layout_toRightOf="@id/buttonOutInfo"
+                    android:text="便签信息"
+                    />
+            </TableRow>
+            
+       </TableLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="0.94">
+        <ListView 
+            android:id="@+id/listInfo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbarAlwaysDrawVerticalTrack="true">
+        </ListView>
+    </LinearLayout>
+        "
+    
+
+</LinearLayout>

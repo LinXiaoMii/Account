@@ -26,7 +26,11 @@
         <activity android:name="com.account.app.activity.InAccountInfo"/>
         <activity android:name="com.account.app.activity.InfoManage"/> 
         <activity android:name="com.account.app.activity.OutAccountInfo"/>
-         <activity android:name="com.account.app.activity.AddOutaccount"/>
+        <activity android:name="com.account.app.activity.AddOutaccount"/>
+        <activity android:name="com.account.app.activity.AccountFlag"/>
+        <activity android:name="com.account.app.activity.DataManage"/>
+        <activity android:name="com.account.app.activity.Setting"/>
+        <activity android:name="com.account.app.activity.FlagManage"/>
     </application>
 
 </manifest>

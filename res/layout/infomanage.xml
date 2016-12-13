@@ -18,7 +18,8 @@
             android:text="收支管理"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="#77ddff"
+            android:textColor="#00AAAA"
+            android:layout_marginTop="20dp"
             />
     </LinearLayout>
      <LinearLayout 

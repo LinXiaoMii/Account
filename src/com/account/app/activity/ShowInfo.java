@@ -2,8 +2,10 @@ package com.account.app.activity;
 
 import java.util.List;
 
+import com.account.app.db.FlagDB;
 import com.account.app.db.InAccoutDB;
 import com.account.app.db.OutAccountDB;
+import com.account.app.model.Flag;
 import com.account.app.model.InAccount;
 import com.account.app.model.OutAccount;
 
@@ -39,6 +41,18 @@ public class ShowInfo {
 			int m = 0 ; //定义一个开始标志
 			for(OutAccount outAccount:listInfos){  //遍历list泛型集合
 				strInfo[m] = outAccount.getId()+"|"+outAccount.getType()+" "+String.valueOf(outAccount.getMoney())+"元      "+outAccount.getType() ;
+				m++ ;
+			}
+		}else if(strInType == "flaginfo"){
+			FlagDB flagDB = new FlagDB(context) ;
+			List<Flag>listFlags = flagDB.loadFlag() ;
+			strInfo = new String[listFlags.size()];
+			int m = 0 ; //定义一个开始标志
+			for(Flag flag:listFlags){  //遍历list泛型集合
+				strInfo[m] = flag.getId()+"|"+flag.getFlag() ;
+				if(strInfo[m].length()>15){
+					strInfo[m] = strInfo[m].substring(0,15)+"......";
+				}
 				m++ ;
 			}
 		}
