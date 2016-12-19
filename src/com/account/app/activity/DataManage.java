@@ -1,5 +1,6 @@
 package com.account.app.activity;
 
+import com.account.app.db.ExitApplication;
 import com.example.account.R;
 
 import android.app.Activity;
@@ -31,6 +32,8 @@ public class DataManage extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.datamanage);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
 		
 		buttonInInfo = (Button)findViewById(R.id.buttonInInfo);
 		buttonOutInfo = (Button)findViewById(R.id.buttonOutInfo);
@@ -56,7 +59,7 @@ public class DataManage extends Activity{
 						String strInfo = String.valueOf(((TextView)view).getText()); //记录收入信息
 						String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从收入信息中截取收入编号
 						Intent intent = new Intent(DataManage.this,InfoManage.class);
-						intent.putExtra(FLAG, new String[]{strid,strInType}); //设置传递数据
+						intent.putExtra(FLAG, new String[]{strid,strInType}); //设置传递数据,便于后面获取key为id的数据（用ShowInfo.FLAG表示）
 						startActivity(intent);
 					}
 				});
@@ -78,7 +81,7 @@ public class DataManage extends Activity{
 					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 						// TODO Auto-generated method stub
 						String strInfo = String.valueOf(((TextView)view).getText()); //记录收入信息
-						String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从收入信息中截取收入编号
+						String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从信息中截取编号
 						Intent intent = new Intent(DataManage.this,InfoManage.class);
 						intent.putExtra(FLAG, new String[]{strid,strInType}); //设置传递数据
 						startActivity(intent);
@@ -101,8 +104,8 @@ public class DataManage extends Activity{
 					@Override
 					public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 						// TODO Auto-generated method stub
-						String strInfo = String.valueOf(((TextView)view).getText()); //记录收入信息
-						String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从收入信息中截取收入编号
+						String strInfo = String.valueOf(((TextView)view).getText()); //记录信息
+						String strid = strInfo.substring(0, strInfo.indexOf('|'));  //从信息中截取编号
 						Intent intent = new Intent(DataManage.this,FlagManage.class);
 						intent.putExtra(FLAG, new String[]{strid,strInType}); //设置传递数据
 						startActivity(intent);

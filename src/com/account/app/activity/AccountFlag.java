@@ -1,5 +1,6 @@
 package com.account.app.activity;
 
+import com.account.app.db.ExitApplication;
 import com.account.app.db.FlagDB;
 import com.account.app.model.Flag;
 import com.example.account.R;
@@ -23,6 +24,8 @@ public class AccountFlag extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.accountflag);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
 		
 		editFlag = (EditText)findViewById(R.id.editFlag);
 		buttonFlagSave = (Button)findViewById(R.id.buttonFlagSave) ;

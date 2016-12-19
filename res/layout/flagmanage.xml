@@ -55,21 +55,23 @@
             android:layout_height="match_parent"
             android:layout_weight="3">
             <Button 
-                android:id="@+id/buttonFlagEditManage"
+                android:id="@+id/buttonFlagCancelManage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="10dp"
                 android:background="#00AAAA"
-                android:text="修改"/>
+                android:textColor="#FFFFFF"
+                android:text="取消"/>
             <Button 
-                android:id="@+id/buttonFlagCancelManage"
+                android:id="@+id/buttonFlagEditManage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/buttonFlagEditManage"
+                android:layout_toLeftOf="@id/buttonFlagCancelManage"
                 android:maxLength="200"
                 android:background="#00AAAA"
-                android:text="取消"/>
+                android:textColor="#FFFFFF"
+                android:text="修改"/>
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

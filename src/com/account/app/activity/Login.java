@@ -1,5 +1,6 @@
 package com.account.app.activity;
 
+import com.account.app.db.ExitApplication;
 import com.account.app.db.PasswardDB;
 import com.example.account.R;
 
@@ -28,6 +29,8 @@ public class Login extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.login);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
 		
 		loginButton = (Button)findViewById(R.id.login_button);
 		cancelButton = (Button)findViewById(R.id.cancel_button);
@@ -75,6 +78,10 @@ public class Login extends Activity{
 		});
 	}
 	
+	public void onBackPressed() {
+		// TODO Auto-generated method stub
+		ExitApplication.getInstance().exit();
+	}
 	
 
 }

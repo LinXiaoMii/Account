@@ -42,7 +42,7 @@ public class FlagDB {
 	//≤È’“±„«©
 	public Flag findFlag(int id){
 		db = helper.getWritableDatabase() ;
-		Cursor cursor = db.rawQuery("select flag from FLAG where id =?", new String[]{String.valueOf(id)});
+		Cursor cursor = db.rawQuery("select * from FLAG where id =?", new String[]{String.valueOf(id)});
 		if(cursor.moveToFirst()){
 			do{
 				String flag = cursor.getString(cursor.getColumnIndex("flag"));

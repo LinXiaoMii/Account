@@ -2,6 +2,7 @@ package com.account.app.activity;
 
 
 
+import com.account.app.db.ExitApplication;
 import com.example.account.R;
 
 import android.app.Activity;
@@ -23,6 +24,9 @@ public class MainActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
+		
 		gridView = (GridView)findViewById(R.id.gridItem);
 		//创建picturAAdapter对象
 		PictureAdapter adapter = new PictureAdapter(titles,images,MainActivity.this) ;

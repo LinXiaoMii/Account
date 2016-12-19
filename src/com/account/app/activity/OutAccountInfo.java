@@ -1,5 +1,6 @@
 package com.account.app.activity;
 
+import com.account.app.db.ExitApplication;
 import com.example.account.R;
 
 import android.app.Activity;
@@ -24,6 +25,9 @@ public class OutAccountInfo extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.outaccountinfo);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
+		
 		listOutaccountInfo = (ListView)findViewById(R.id.listOutaccountInfo);
 		ShowInfo show = ShowInfo.newInstance() ;
 		show.showInfo(strInType,OutAccountInfo.this) ;

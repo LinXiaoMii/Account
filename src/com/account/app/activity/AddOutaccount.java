@@ -2,6 +2,7 @@ package com.account.app.activity;
 
 import java.util.Calendar;
 
+import com.account.app.db.ExitApplication;
 import com.account.app.db.OutAccountDB;
 import com.account.app.model.OutAccount;
 import com.account.app.util.MyDialogFragment;
@@ -33,6 +34,9 @@ public class AddOutaccount extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedOutstanceState);
 		setContentView(R.layout.addoutaccount);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
+		
 		editOutMoney = (EditText)findViewById(R.id.editOutMoney);
 		spoutOutType = (Spinner)findViewById(R.id.spinOutType);
 		editOutAddress = (EditText)findViewById(R.id.editOutAddress);

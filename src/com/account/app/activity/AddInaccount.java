@@ -2,6 +2,7 @@ package com.account.app.activity;
 
 import java.util.Calendar;
 
+import com.account.app.db.ExitApplication;
 import com.account.app.db.InAccoutDB;
 import com.account.app.model.InAccount;
 import com.account.app.util.MyDialogFragment;
@@ -33,6 +34,9 @@ public class AddInaccount extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.addincount);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
+				
 		editInMoney = (EditText)findViewById(R.id.editInMoney);
 		spinInType = (Spinner)findViewById(R.id.spinInType);
 		editInHnadler = (EditText)findViewById(R.id.editInHandler);

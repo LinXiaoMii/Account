@@ -32,6 +32,7 @@
             android:layout_weight="1"
             android:background="#00AAAA"
             android:layout_marginLeft="15dp"
+            android:textColor="#FFFFFF"
             android:text="登陆" />
         <Button 
             android:id="@+id/cancel_button"
@@ -40,6 +41,7 @@
             android:layout_weight="1"
             android:background="#00AAAA"
             android:layout_marginLeft="15dp"
+            android:textColor="#FFFFFF"
             android:layout_marginRight="15dp"
             android:text="取消" />"
     </TableRow>

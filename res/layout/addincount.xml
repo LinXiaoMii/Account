@@ -131,12 +131,16 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true" 
                 android:layout_marginLeft="10dp"
+                android:background="#00AAAA"
+                android:textColor="#FFFFFF"
                 android:text="取消"/>
             <Button
                 android:id="@+id/buttonInSave"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/buttonInCancel"
+                android:background="#00AAAA"
+                android:textColor="#FFFFFF"
                 android:text="保存"/>"
         </RelativeLayout>
     </LinearLayout>

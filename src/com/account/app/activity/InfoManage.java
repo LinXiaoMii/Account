@@ -2,6 +2,7 @@ package com.account.app.activity;
 
 import java.util.Calendar;
 
+import com.account.app.db.ExitApplication;
 import com.account.app.db.InAccoutDB;
 import com.account.app.db.OutAccountDB;
 import com.account.app.model.InAccount;
@@ -43,6 +44,8 @@ public class InfoManage extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.infomanage);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
 		
 		//初始化控件
 		textTitle = (TextView)findViewById(R.id.inoutTtile);

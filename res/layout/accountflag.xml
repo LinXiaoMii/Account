@@ -60,13 +60,17 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="10dp"
+                android:background="#00AAAA"
+                android:textColor="#FFFFFF"
                 android:text="取消"/>
             <Button 
                 android:id="@+id/buttonFlagSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toLeftOf="@id/buttonFlagCancel"
+                android:background="#00AAAA"
                 android:maxLength="200"
+                android:textColor="#FFFFFF"
                 android:text="保存"/>
         </RelativeLayout>
     </LinearLayout>

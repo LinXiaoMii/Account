@@ -1,5 +1,6 @@
 package com.account.app.activity;
 
+import com.account.app.db.ExitApplication;
 import com.account.app.db.PasswardDB;
 import com.account.app.model.Passward;
 import com.example.account.R;
@@ -23,6 +24,8 @@ public class Setting extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.setting);
+		//便于最终关闭程序
+		ExitApplication.getInstance().addActivity(this);
 		
 		editPassword = (EditText)findViewById(R.id.editPassword) ;
 		buttonSet = (Button)findViewById(R.id.buttonSetSet);
