@@ -41,8 +41,9 @@ public class Login extends Activity{
 		Boolean isRemember = sp.getBoolean("isRemember", false);
 		
 		if(isRemember){
-			String passward = sp.getString("passward", "");
-			passwardEdit.setText(passward);
+			String password = sp.getString("password", "");
+			passwardEdit.setText(password);
+			passwardEdit.setText(password);
 			rememberCheck.setChecked(true);
 		}
 		
@@ -59,6 +60,13 @@ public class Login extends Activity{
 					startActivity(intent);//Ê×´ÎµÇÂ½
 				}else{
 					if(passwardDB.findPassward().getPassward().equals(passwardEdit.getText().toString())){
+						if(rememberCheck.isChecked()){
+							editor.putBoolean("isRemember", true);
+							editor.putString("password", passwardDB.findPassward().getPassward());
+						}else{
+							editor.clear();
+						}
+						editor.commit() ;
 						startActivity(intent);
 					}else{
 						Toast.makeText(Login.this, "ÃÜÂë´íÎó", Toast.LENGTH_SHORT).show();
